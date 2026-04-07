@@ -1,9 +1,14 @@
 .swatch {
-    font-size: clamp(40px, 12vw, 150px);
-    width: min(900px, 90vw);
-    border-width: clamp(4px, 1.5vw, 20px);
-    border-radius: clamp(20px, 5vw, 70px);
-    padding: clamp(10px, 3vw, 30px) clamp(20px, 4vw, 50px);
+    font-size: 150px;
+    font-family: 'Atkinson Hyperlegible Mono', serif;
+    font-weight: 500;
+    padding: 30px 50px;
+    border: 20px solid black;
+    border-radius: 70px;
+    width: 900px;
+    text-align: center;
+    display: inline-block;
+
 }
 
 #credit {
