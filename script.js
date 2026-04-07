@@ -4,19 +4,15 @@ function swatchTime() {
     let minutes = date.getUTCMinutes();
     let seconds = date.getUTCSeconds();
     let milliseconds = date.getUTCMilliseconds();
-
-    let bmt_hours = utc_hours + 1; // Convert to Biel Mean Time (BMT)
-    let swatch = (((bmt_hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds) / 86400; // Swatch beats (@000 to @999)
-    
+    let bmt_hours = utc_hours + 1;
+    let swatch = (((bmt_hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds) / 86400;
     swatch %= 1000;
 
-    // Update all elements with class "swatch"
     document.querySelectorAll('.swatch').forEach(el => {
-        el.innerHTML = `@${swatch.toFixed(2)}`;
+        el.textContent = `@${swatch.toFixed(2)}`;
     });
 
-    
+    requestAnimationFrame(swatchTime);
 }
 
-// Update every 10 milliseconds for smooth display
-setInterval(swatchTime, 10);
+requestAnimationFrame(swatchTime);
