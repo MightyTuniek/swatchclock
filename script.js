@@ -12,6 +12,9 @@ function swatchTime() {
         el.textContent = `@${swatch.toFixed(2)}`;
     });
 
+    const fill = document.getElementById('progress');
+    if (fill) fill.style.width = `${(swatch / 1000) * 100}%`;
+
     requestAnimationFrame(swatchTime);
 }
 
